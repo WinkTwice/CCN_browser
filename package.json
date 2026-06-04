@@ -1,0 +1,25 @@
+{
+  "name": "ccn-browser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CCN Browser - Electron + Vue 3",
+  "main": "main/index.js",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:vite\" \"npm:dev:electron\"",
+    "dev:vite": "vite",
+    "dev:electron": "wait-on tcp:5173 && cross-env NODE_ENV=development electron .",
+    "build": "vite build",
+    "start": "electron ."
+  },
+  "dependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.0",
+    "vite": "^5.0.0",
+    "wait-on": "^7.2.0"
+  }
+}
